@@ -36,6 +36,9 @@ module.exports = {
         bucketName: "tt-marketing-demo",
       },
     },
+    {
+      resolve: 'gatsby-plugin-zopfli'
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
