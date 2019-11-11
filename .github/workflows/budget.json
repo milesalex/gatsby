@@ -4,11 +4,11 @@
     "resourceSizes": [
       {
         "resourceType": "total",
-        "budget": 100
+        "budget": 150
       },
       {
         "resourceType": "script",
-        "budget": 80
+        "budget": 300
       }
     ],
     "resourceCounts": [
