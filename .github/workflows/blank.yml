@@ -9,15 +9,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
+
     - name: Lighthouse CI Action
       uses: treosh/lighthouse-ci-action@v1
       with:
         urls: 'http://milesalex.github.io/gatsby'
-    - name: Save results
-      uses: actions/upload-artifact@v1
+
+    - name: Upload results
+      uses: actions/upload-artifact@master
       with:
         name: lighthouse-results
-        # This will save the Lighthouse results as .json files
-        path: '.lighthouseci'
+        path: './results'
