@@ -14,6 +14,7 @@ jobs:
       uses: treosh/lighthouse-ci-action@v1
       with:
         urls: 'http://milesalex.github.io/gatsby'
+        budgetPath: .github/workflows/budget.json
 
     - name: Upload results
       uses: actions/upload-artifact@master
