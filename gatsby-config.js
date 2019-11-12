@@ -1,14 +1,29 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
+const contentfulConfig = {
+  spaceId: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  // host: process.env.CONTENTFUL_HOST
+}
+
 module.exports = {
   siteMetadata: {},
-  pathPrefix: "/gatsby",
   siteMetadata: {
     siteUrl: `http://milesalex.github.io/gatsby/`,
     title: `When I Work`,
     description: `fill this out at some point`,
     author: `@wheniwork`,
   },
+  assetPrefix: "src/assets",
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-remove-trailing-slashes`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -16,8 +31,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -37,11 +50,17 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-zopfli'
+      resolve: "gatsby-plugin-zopfli",
+      options: {
+        extensions: ["css", "html", "js", "svg"],
+      },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: contentfulConfig,
+    },
+    {
+      resolve: "gatsby-plugin-asset-path",
+    },
   ],
 }
