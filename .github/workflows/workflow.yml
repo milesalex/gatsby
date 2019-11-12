@@ -13,7 +13,7 @@ jobs:
     - name: Lighthouse CI Action
       uses: treosh/lighthouse-ci-action@v2
       with:
-        urls: 'http://milesalex.github.io/gatsby'
+        urls: 'https://two.tokentax.co'
         budgetPath: .github/workflows/budget.json
 
     - name: Upload results
