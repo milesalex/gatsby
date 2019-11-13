@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import {  graphql } from "gatsby"
 import Layout from "./layout"
 import SEO from "./seo"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
@@ -24,7 +24,7 @@ const SingleExchangePage = ({ data }) => {
       <SEO title="Exchange" />
       <h1>{exchange.name}</h1>
       {exchange.platformImage && (
-        <img src={exchange.platformImage.file.url} />
+        <img src={exchange.platformImage.file.url} alt={exchange.platformImage.title} />
       )}
       {exchange.showAdditionalCopy &&
         documentToReactComponents(exchange.additionalCopy.json, options)}

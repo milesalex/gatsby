@@ -2,11 +2,11 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "./layout"
 import SEO from "./seo"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+// import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 // import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const Bold = ({ children }) => <span className="bold">{children}</span>
-const Text = ({ children }) => <p className="align-center">{children}</p>
+// const Bold = ({ children }) => <span className="bold">{children}</span>
+// const Text = ({ children }) => <p className="align-center">{children}</p>
 
 // const options = {
 //   renderMark: {

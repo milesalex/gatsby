@@ -25,12 +25,16 @@ const ExchangePage = ({ data }) => {
           return (
             <li key={item.node.id}>
               {item.node.logoColor ? (
-            
                 <picture>
-                  <source srcSet={item.node.logoColor.fixed.srcWebp} type="image/webp" />
-                  <img src={item.node.logoColor.file.url} alt={item.node.title} />
+                  <source
+                    srcSet={item.node.logoColor.fixed.srcWebp}
+                    type="image/webp"
+                  />
+                  <img
+                    src={item.node.logoColor.file.url}
+                    alt={item.node.name}
+                  />
                 </picture>
-            
               ) : (
                 <code>placeholder {item.node.name} img</code>
               )}
@@ -44,15 +48,17 @@ const ExchangePage = ({ data }) => {
       </ul>
 
       <h2>Others</h2>
-      {smallExchanges.map(item => {
-        return (
-          <li key={item.node.id}>
-            <Link to={`/exchanges/${item.node.contentfulid}`}>
-              {item.node.name}
-            </Link>
-          </li>
-        )
-      })}
+      <ul>
+        {smallExchanges.map(item => {
+          return (
+            <li key={item.node.id}>
+              <Link to={`/exchanges/${item.node.contentfulid}`}>
+                {item.node.name}
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
 
       <Link to="/blog/">Go to blog</Link>
     </Layout>
