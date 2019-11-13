@@ -13,6 +13,10 @@
       {
         "resourceType": "third-party",
         "budget": 10
+      },
+      {
+        "resourceType": "total",
+        "budget": 15
       }
     ]
   },
