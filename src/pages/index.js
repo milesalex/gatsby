@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <ul>
         <li>
-          <Link to="/users">users</Link>
+          <a href="/users">users</a>
         </li>
         <li>
           <Link to="/blog">blog</Link>
