@@ -9,14 +9,13 @@ const contentfulConfig = {
 }
 
 module.exports = {
-  siteMetadata: {},
   siteMetadata: {
     siteUrl: `http://milesalex.github.io/gatsby/`,
     title: `When I Work`,
     description: `fill this out at some point`,
     author: `@wheniwork`,
   },
-  assetPrefix: "src/assets",
+  assetPrefix: "assets",
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -61,6 +60,9 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-asset-path",
+      options: {
+        // additionalPaths: ["manifest.webmanifest"],
+      },
     },
   ],
 }
