@@ -12,6 +12,21 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
+      <ul>
+        <li>
+          <Link to="/users">users</Link>
+        </li>
+        <li>
+          <Link to="/blog">blog</Link>
+        </li>
+        <li>
+          <Link to="/exchanges">exchanges</Link>
+        </li>
+        <li>
+          <Link to="/help">help</Link>
+        </li>
+      </ul>
+
       <h1>Hi lighthouse</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
@@ -24,8 +39,6 @@ const IndexPage = ({ data }) => {
           return <li key={item.node.id}>{item.node.title}</li>
         })}
       </ul> */}
-
-      <Link to="/blog/">Go to the blog</Link>
     </Layout>
   )
 }
